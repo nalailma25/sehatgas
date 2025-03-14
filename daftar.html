@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - SehatGas</title>
+    <link rel="stylesheet" href="DaftarStyles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="content">
+                <h2>Selamat Datang!</h2>
+                <p>Langkah sederhana untuk kesehatan maksimal! Panduan praktis obat tradisional dan pertolongan pertama untuk membantu Anda menjaga keseimbangan tubuh secara alami dan aman.</p>
+                <button class="masuk-btn" onclick="window.location.href='masuk.html'">Masuk</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2>Buat Akun</h2>
+            <div class="social-icons">
+                <button class="social-btn">
+                    <img src="images/google.png" alt="Google">
+                </button>
+                <button class="social-btn">
+                    <img src="images/facebook.png" alt="Facebook">
+                </button>
+            </div>
+            <p>atau daftar dengan email</p>
+            <form id="registerForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="nama" placeholder="Nama">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Kata Sandi">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Konfirmasi Kata Sandi">
+                </div>
+                <div class="syarat-container">
+                    <p>Dengan mendaftar, Anda menyetujui <a href="syarat-ketentuan.html" class="syarat-ketentuan">Syarat & Ketentuan</a> kami.</p>
+                </div>
+                    <button type="submit" class="btn">Daftar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let nama = document.getElementById("nama").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            if (nama === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("Semua kolom harus diisi!");
+                return;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Masukkan email yang valid!");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Kata sandi tidak cocok!");
+                return;
+            }
+
+            alert("Pendaftaran berhasil!");
+            this.submit();
+        });
+    </script>
+
+</body>
+</html>
