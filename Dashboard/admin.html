@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin SehatGas</title>
+    <link rel="stylesheet" href="admin_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Admin SehatGas</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" onclick="showSection('dashboard')"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#resep" onclick="showSection('resep')"><i class="fas fa-book-medical"></i> Kelola Resep Obat</a></li>
+                    <li><a href="#pertolongan" onclick="showSection('pertolongan')"><i class="fas fa-first-aid"></i> Kelola Pertolongan Pertama</a></li>
+                    <li><a href="#pengguna" onclick="showSection('pengguna')"><i class="fas fa-users"></i> Kelola Pengguna</a></li>
+                    <li><a href="#logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <div class="grid-container">
+                <section id="dashboard" class="card">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-summary">
+                        <div class="summary-item">
+                            <h3>Jumlah Resep Obat</h3>
+                            <p id="recipeCount">0</p>
+                        </div>
+                        <div class="summary-item">
+                            <h3>Jumlah Panduan Pertolongan Pertama</h3>
+                            <p id="firstAidCount">0</p>
+                        </div>
+                        <div class="summary-item">
+                            <h3>Jumlah Pengguna Terdaftar</h3>
+                            <p id="userCount">0</p>
+                        </div>
+                    </div>
+                </section>
+            <div class="grid-container">
+                <section id="resep" class="card">
+                    <h2>Kelola Resep Obat Tradisional</h2>
+                    <button onclick="showAddRecipeForm()">Tambah Resep</button>
+                    <div id="recipe-list">
+                        <!-- Daftar resep obat akan ditampilkan di sini -->
+                    </div>
+                </section>
+                <section id="pertolongan" class="card">
+                    <h2>Kelola Panduan Pertolongan Pertama</h2>
+                    <button onclick="showAddFirstAidForm()">Tambah Panduan</button>
+                    <div id="first-aid-list">
+                        <!-- Daftar panduan pertolongan pertama akan ditampilkan di sini -->
+                    </div>
+                </section>
+                <section id="pengguna" class="card">
+                    <h2>Kelola Pengguna</h2>
+                    <button onclick="showAddUserForm()">Tambah Pengguna</button>
+                    <div id="user-list">
+                        <!-- Daftar pengguna akan ditampilkan di sini -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+<!-- Form Tambah Resep Obat -->
+<div id="add-recipe-form" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddRecipeForm()">&times;</span>
+        <h2>Tambah Resep Obat Tradisional</h2>
+        <form id="recipeForm">
+            <div class="form-group">
+                <label for="recipeName">Nama Resep:</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Bahan-Bahan:</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="instructions">Cara Pembuatan:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Simpan Resep</button>
+        </form>
+    </div>
+</div>
+
+<!-- Form Tambah Panduan Pertolongan Pertama -->
+<div id="add-first-aid-form" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddFirstAidForm()">&times;</span>
+        <h2>Tambah Panduan Pertolongan Pertama</h2>
+        <form id="firstAidForm">
+            <div class="form-group">
+                <label for="firstAidTitle">Judul Panduan:</label>
+                <input type="text" id="firstAidTitle" name="firstAidTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="firstAidSteps">Langkah-Langkah:</label>
+                <textarea id="firstAidSteps" name="firstAidSteps" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Simpan Panduan</button>
+        </form>
+    </div>
+</div>
+
+<!-- Form Tambah Pengguna -->
+<div id="add-user-form" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddUserForm()">&times;</span>
+        <h2>Tambah Pengguna</h2>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="submit-button">Simpan Pengguna</button>
+        </form>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2025 SehatGas. All rights reserved.</p>
+    </footer>
+    <script src="admin_script.js"></script>
+</body>
+</html>

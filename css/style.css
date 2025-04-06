@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    align-items: stretch;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #066d64;
+    color: white;
+    padding: 20px;
+    flex-direction: row;
+    min-height: 100vh;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li {
+    padding: 10px;
+    margin: 5px 0;
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #055a52;
+    border-radius: 5px;
+    text-align: center;
+}
+.sidebar ul li a:hover, .active {
+    background-color: #044a42;
+}
+
+/* Main Dashboard */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    align-self: stretch;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.logout-btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #044a42;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.logout-btn:hover {
+    background-color: #044a42;
+}
+
+/* Form Input */
+.form-section {
+    background: #e9f5f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.form-section h2 {
+    margin-bottom: 10px;
+}
+form input, form select, form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form button {
+    background-color: #066d64;
+    color: white;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #055a52;
+}
+
+/* Table */
+.table-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #066d64;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Chart */
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Button Download CSV */
+.download-btn {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.download-btn:hover {
+    background-color: #218838;
+}

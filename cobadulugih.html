@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SehatGas</title>
+</head>
+<body>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #00A896;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.btn-daftar {
+  background: #00A896;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+
+.hero-text .highlight {
+  color: #00A896;
+}
+
+.search-box {
+  display: flex;
+  margin-top: 1rem;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+.search-box button {
+  background: #00A896;
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.hero-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-images img {
+  width: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: calc(33% - 1rem);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.cta {
+  background: #e0f7f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+}
+
+.cta .btn-daftar {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+footer {
+  background: #f2f2f2;
+  padding: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content > div {
+  flex: 1 1 200px;
+  margin: 1rem;
+}
+
+.footer-logo {
+  width: 120px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  margin-top: 1rem;
+}
+</style>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo"> <img src="logo.png" alt="SehatGas" /> <span>SehatGas</span> </div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Produk</a></li>
+        <li><a href="#">Unggah</a></li>
+        <li><a href="#">Aplikasi</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#" class="btn-daftar">Daftar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Kesehatan Itu Mudah, Kita <span class="highlight">Gas</span> Aja!</h1>
+      <p>Langkah sederhana untuk kesehatan maksimal! Panduan praktis obat tradisional dan pertolongan pertama untuk membantu Anda menjaga keseimbangan tubuh secara alami dan aman.</p>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari Solusi Kesehatan Tradisional" />
+        <button onclick="searchContent()"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+    <div class="hero-images">
+      <img src="img1.jpg" alt="Herbal" />
+      <img src="img2.jpg" alt="Rempah" />
+      <img src="img3.jpg" alt="Campuran" />
+    </div>
+  </section>
+
+  <!-- Resep -->
+  <section class="section" id="resep">
+    <div class="section-header">
+      <h2>Resep Obat Tradisional</h2>
+      <a href="#">Lihat Semua</a>
+    </div>
+    <div class="card-container">
+      <div class="card" data-keywords="beras kencur stamina">
+        <img src="resep1.jpg" alt="Beras Kencur">
+        <h3>Beras Kencur</h3>
+        <p>Minuman Penguat Stamina Sehari-hari</p>
+      </div>
+      <div class="card" data-keywords="daun sirih bau mulut alami">
+        <img src="resep2.jpg" alt="Daun Sirih">
+        <h3>Daun Sirih</h3>
+        <p>Solusi Alami untuk Bau Mulut</p>
+      </div>
+      <div class="card" data-keywords="temulawak daya tahan">
+        <img src="resep3.jpg" alt="Temulawak">
+        <h3>Temulawak</h3>
+        <p>Ramuan Ajaib untuk Daya Tahan Tubuh</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pertolongan Pertama -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Pertolongan Pertama</h2>
+      <a href="#">Lihat Semua</a>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <img src="pt1.jpg" alt="Luka Bakar">
+        <h3>Luka Bakar Knalpot Motor</h3>
+      </div>
+      <div class="card">
+        <img src="pt2.jpg" alt="Tergelincir">
+        <h3>Tergelincir di Kamar Mandi</h3>
+      </div>
+      <div class="card">
+        <img src="pt3.jpg" alt="Kesetrum">
+        <h3>Kesetrum Kabel Listrik</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Berita Kesehatan -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Berita Kesehatan</h2>
+      <a href="#">Lihat Semua</a>
+    </div>
+    <div class="card-container">
+      <div class="card" data-keywords="jeruk nipis tenggorokan tradisional">
+        <img src="jeruk.jpg" alt="Jeruk Nipis">
+        <h3>Jeruk Nipis</h3>
+        <p>Resep Tradisional untuk Tenggorokan</p>
+      </div>
+      <div class="card" data-keywords="jahe merah masuk angin">
+        <img src="jahe.jpg" alt="Jahe Merah">
+        <h3>Jahe Merah</h3>
+        <p>Minuman Hangat Pengusir Masuk Angin</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2><span class="highlight">Sembuh</span> didepan mata!</h2>
+    <p>Sayangi dan jaga diri anda dengan obat-obat tradisional beserta tips pertolongan pertama.</p>
+    <a href="#" class="btn-daftar">Lihat Produk</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <img src="logo.png" alt="Logo" class="footer-logo" />
+        <p>Panduan praktis obat tradisional dan pertolongan pertama</p>
+      </div>
+      <div>
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Produk</a></li>
+          <li><a href="#">Unggah</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tautan</h4>
+        <ul>
+          <li><a href="#">Aplikasi</a></li>
+          <li><a href="#">Tag Kami</a></li>
+          <li><a href="#">Social Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak Kami</h4>
+        <p>📞 +62 812 3456 789</p>
+        <p>📧 sehatyuk@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SehatGas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function searchContent() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const keywords = card.dataset.keywords;
+    if (keywords && keywords.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+  </script>
+</body>
+</html>

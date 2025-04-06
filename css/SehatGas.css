@@ -12,7 +12,6 @@ body {
     background-color: #F9F6EB;
     color: #333;
 }
-
 /* ===== NAVBAR ===== */
 nav {
     display: flex;
@@ -25,6 +24,7 @@ nav {
     width: 100%;
     top: 0;
     left: 0;
+    
 }
 
 .logo img {
@@ -115,35 +115,39 @@ nav ul li a:hover {
 
 /* ===== SEARCH SECTION ===== */
 
-.search-section {
+.search-bar {
     display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            padding: 5px 10px;
-            max-width: 400px;
+    align-items: center;
+    background: #009688;
+    padding: 10px 15px;
+    width: 400px;
 }
 
-.search-section input {
+.search-bar input {
     border: none;
-            outline: none;
-            flex: 1;
-            padding: 5px;
+    outline: none;
+    flex: 1;
+    background: transparent;
+    font-size: 14px;
+    color: #009688;
 }
 
-.search-btn {
-    background: #00796b;
+.search-bar button {
+    background: #009688;
     border: none;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 5px;
-    margin-left: -50px;
-            border: none;
-            cursor: pointer;
-} 
-.search-btn:hover {
-    background: #00796b;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.search-bar button img {
+    width: 16px;
+    height: 16px;
+}
+
 
 
 /* ===== RESEP OBAT ===== */
@@ -583,11 +587,11 @@ header {
 /* ===== SEARCH SECTION ===== */
 .search-section {
     display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            padding: 5px 10px;
-            max-width: 400px;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    max-width: 400px;
 }
 
 .search-section input {
@@ -600,8 +604,8 @@ header {
 .search-btn {
     background: #009688;
     border: none;
-    color: white;
-    padding: 10px 15px;
+    color: #009688;
+    padding: 15px 15px;
     border-radius: 5px;
     margin-left: -50px;
     cursor: pointer;
